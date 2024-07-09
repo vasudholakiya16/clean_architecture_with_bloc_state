@@ -1,4 +1,5 @@
 import 'package:clean_architecture_with_bloc_state/config/routes/routes_name.dart';
+import 'package:clean_architecture_with_bloc_state/services/splash/splash_services.dart';
 import 'package:clean_architecture_with_bloc_state/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,13 @@ class SpleshScreen extends StatefulWidget {
 }
 
 class _SpleshScreenState extends State<SpleshScreen> {
+  SplashServices _splashServices = SplashServices();
+  @override
+  void initState() {
+    super.initState();
+    _splashServices.isUserLoggedIn(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
