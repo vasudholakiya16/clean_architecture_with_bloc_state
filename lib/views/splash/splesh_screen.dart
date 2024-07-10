@@ -30,7 +30,7 @@ class _SpleshScreenState extends State<SpleshScreen> {
               RoundedButton(
                 title: 'Login',
                 onPressed: () {
-                  Navigator.pushNamed(context, RoutesName.homescreen);
+                  Navigator.pushNamed(context, RoutesName.loginscreen);
                 },
               ),
               const SizedBox(
