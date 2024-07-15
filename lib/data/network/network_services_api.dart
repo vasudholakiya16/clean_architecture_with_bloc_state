@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:clean_architecture_with_bloc_state/data/exception/app_exception.dart';
 import 'package:clean_architecture_with_bloc_state/data/network/base_api_services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class NetworkServicesApi implements BaseApiServices {
@@ -53,6 +54,11 @@ class NetworkServicesApi implements BaseApiServices {
   @override
   Future<dynamic> postApi(String url, var data) async {
     dynamic jsonResponse;
+    if (kDebugMode) {
+      print(url);
+      print(data);
+    }
+
     try {
       final response = await http
           .post(Uri.parse(url), body: data)
